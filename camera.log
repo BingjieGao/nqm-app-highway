@@ -1,0 +1,736 @@
+L.marker([50.9498, -1.4650], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19111"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9541, -1.4592], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19123"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9577, -1.4484], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19131"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9599, -1.4230], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19148"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9597, -1.4220], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19150"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9573, -1.4144], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19156"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9511, -1.3991], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19169"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9484, -1.3824], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19180"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9495, -1.3705], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19190"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9458, -1.3642], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19197"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9397, -1.3594], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19204"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9354, -1.3449], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19215"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9352, -1.3314], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19225"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9306, -1.3194], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19234"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9167, -1.3173], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19251"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9082, -1.3185], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19260"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8984, -1.3125], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19272"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8876, -1.2911], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19292"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8876, -1.2911], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19303"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8742, -1.2511], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19325"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8676, -1.2303], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19341"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8682, -1.2063], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19358"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8675, -1.1838], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19374"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8598, -1.1577], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19394"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8556, -1.1358], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19411"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8544, -1.1108], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19428"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8420, -1.0928], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19447"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8383, -1.0846], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19457"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8193, -1.0923], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19465"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8360, -1.0598], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19472"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8336, -1.0495], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19479"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8379, -1.0306], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19493"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8431, -1.0211], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/19507"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8520, -1.0124], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/15011"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8630, -1.0169], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/15023"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8743, -1.0142], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/15036"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.8880, -1.0025], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/15053"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9069, -0.9989], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/15075"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9210, -0.9979], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/15090"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9610, -1.3991], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12178"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9607, -1.3925], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12173"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9713, -1.3771], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12156"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([50.9956, -1.3575], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12126"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0041, -1.3550], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12117"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0229, -1.3332], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12091"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0301, -1.3268], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12082"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0340, -1.3255], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12077"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0498, -1.3019], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12052"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0558, -1.2950], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12044"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0645, -1.2931], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12034"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0728, -1.2918], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12024"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0803, -1.2936], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12016"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0846, -1.2891], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/12011"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency),
+
+L.marker([51.0970, -1.2749], {icon: lightIcon}) .bindPopup('<iframe
+width="360" height="300"
+src="http://public.hacctv.org.uk/cctvpublicaccess/images/11994"
+allowtransparency="yes"></iframe><br>').addTo(highwaysagency);
+
+
+
+var romanse = new L.LayerGroup();
+
+
+
+L.marker([51.25813, -1.06375], {icon: darkIcon})
+
+   .bindPopup('M3 Junction 6<br><img
+src="http://www.hants.gov.uk/cctv/WCAM081.jpg" width="387"
+height="290" border="1"><br>Southbound slip').addTo(romanse),
+
+L.marker([51.0713, -1.2912], {icon: darkIcon})
+
+   .bindPopup('M3 Junction 9<br><img
+src="http://www.hants.gov.uk/cctv/WCAM123.jpg" width="387"
+height="290" border="1" ><br>Winnall, A34').addTo(romanse),
+
+L.marker([51.0505, -1.3027], {icon: darkIcon})
+
+   .bindPopup('M3 Junction 10<br><img
+src="http://www.hants.gov.uk/cctv/WCAM122.jpg" width="387"
+height="290" border="1" ><br>Bar End').addTo(romanse),
+
+L.marker([51.0383, -1.3278], {icon: darkIcon})
+
+   .bindPopup('M3 Junction 11<br><img
+src="http://www.hants.gov.uk/cctv/WCAM121.jpg" width="387"
+height="290" border="1" ><br>Bushfield Rbt').addTo(romanse),
+
+L.marker([50.95037, -1.37108], {icon: darkIcon})
+
+   .bindPopup('M27 Junction 5<br><img
+src="http://www.hants.gov.uk/cctv/WCAM139.jpg" width="387"
+height="290" border="1" ><br>Eastbound offslip').addTo(romanse),
+
+L.marker([50.94896, -1.37082], {icon: darkIcon})
+
+   .bindPopup('M27 Junction 5<br><img
+src="http://www.hants.gov.uk/cctv/WCAM140.jpg" width="387"
+height="290" border="1" ><br>Westbound offslip').addTo(romanse),
+
+L.marker([50.8689, -1.2559], {icon: darkIcon})
+
+   .bindPopup('Sengensworth Rbt West<br><img
+src="http://www.hants.gov.uk/cctv/WCAM073.jpg" width="387"
+height="290" border="1" ><br>Park Gate exit').addTo(romanse),
+
+L.marker([50.8695, -1.2546], {icon: darkIcon})
+
+   .bindPopup('Sengensworth Rbt North<br><img
+src="http://www.hants.gov.uk/cctv/WCAM071.jpg" width="387"
+height="290" border="1" ><br>M27/Whiteley exit').addTo(romanse),
+
+L.marker([50.8683, -1.2551], {icon: darkIcon})
+
+   .bindPopup('Sengensworth Rbt South<br><img
+src="http://www.hants.gov.uk/cctv/WCAM072.jpg" width="387"
+height="290" border="1" ><br>A27 Fareham exit').addTo(romanse),
+
+L.marker([50.85063, -1.17766], {icon: darkIcon})
+
+   .bindPopup('Quay Street Rbt<br><img
+src="http://www.hants.gov.uk/cctv/WCAM148.jpg" width="387"
+height="290" border="1" ><br>A27 Fareham').addTo(romanse),
+
+L.marker([50.8490, -1.0129], {icon: darkIcon})
+
+   .bindPopup('A3M Junction 5<br><img
+src="http://www.hants.gov.uk/cctv/WCAM145.jpg" width="387"
+height="290" border="1" ><br>Northbound slip').addTo(romanse),
+
+L.marker([50.8508, -1.0112], {icon: darkIcon})
+
+   .bindPopup('A3M Junction 5<br><img
+src="http://www.hants.gov.uk/cctv/WCAM144.jpg" width="387"
+height="290" border="1" ><br>Southbound slip').addTo(romanse),
+
+L.marker([50.8486, -0.9838], {icon: darkIcon})
+
+   .bindPopup('A27 Langstone Rbt<br><img
+src="http://www.hants.gov.uk/cctv/WCAM174.jpg" width="387"
+height="290" border="1" ><br>Havant slip').addTo(romanse),
+
+L.marker([50.8474, -0.9839], {icon: darkIcon})
+
+   .bindPopup('A27 Langstone Rbt<br><img
+src="http://www.hants.gov.uk/cctv/WCAM175.jpg" width="387"
+height="290" border="1" ><br>Hayling Island slip').addTo(romanse),
+
+L.marker([51.2580, -1.066], {icon: darkIcon})
+
+   .bindPopup('M3 Junction 6<br><img
+src="http://www.hants.gov.uk/cctv/WCAM079.jpg" width="387"
+height="290" border="1"><br>Northbound slip').addTo(romanse),
+
+L.marker([51.2629, -1.0663], {icon: darkIcon})
+
+   .bindPopup('Blackdam roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM083.jpg" width="387"
+height="290" border="1"><br>A30/A339').addTo(romanse),
+
+L.marker([51.2580, -1.0823], {icon: darkIcon})
+
+   .bindPopup('Hackwood Rd<br><img
+src="http://www.hants.gov.uk/cctv/WCAM133.jpg" width="387"
+height="290" border="1"><br>North of Rbt, A30').addTo(romanse),
+
+L.marker([51.2571, -1.0815], {icon: darkIcon})
+
+   .bindPopup('Hackwood Rd<br><img
+src="http://www.hants.gov.uk/cctv/WCAM132.jpg" width="387"
+height="290" border="1"><br>South of Rbt, A30/A339').addTo(romanse),
+
+L.marker([51.2550, -1.1035], {icon: darkIcon})
+
+   .bindPopup('Winchester Rd<br><img
+src="http://www.hants.gov.uk/cctv/WCAM125.jpg" width="387"
+height="290" border="1"><br>A340/A30- Ringway south').addTo(romanse),
+
+L.marker([51.2655, -1.1080], {icon: darkIcon})
+
+   .bindPopup('Thornycroft Rbt<br><img
+src="http://www.hants.gov.uk/cctv/WCAM124.jpg" width="387"
+height="290" border="1"><br>A340/Churchill Way West').addTo(romanse),
+
+L.marker([51.2665, -1.1000], {icon: darkIcon})
+
+   .bindPopup('Churchill Way West<br><img
+src="http://www.hants.gov.uk/cctv/WCAM134.jpg" width="387"
+height="290" border="1"><br>A3010').addTo(romanse),
+
+L.marker([51.2754, -1.1123], {icon: darkIcon})
+
+   .bindPopup('Kingsclere Rd/Newbury Rd<br><img
+src="http://www.hants.gov.uk/cctv/WCAM138.jpg" width="387"
+height="290" border="1"><br>A340/A339').addTo(romanse),
+
+L.marker([51.2810, -1.1055], {icon: darkIcon})
+
+   .bindPopup('Aldermaston Rd<br><img
+src="http://www.hants.gov.uk/cctv/WCAM137.jpg" width="387"
+height="290" border="1"><br>nr Priestley Rd, A340').addTo(romanse),
+
+L.marker([51.2781, -1.1019], {icon: darkIcon})
+
+   .bindPopup('Aldermaston Rd roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM136.jpg" width="387"
+height="290" border="1"><br>North of roundabout,
+A340').addTo(romanse),
+
+L.marker([51.2764, -1.1012], {icon: darkIcon})
+
+   .bindPopup('Aldermaston Rd roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM135.jpg" width="387"
+height="290" border="1"><br>South of roundabout,
+A340').addTo(romanse),
+
+L.marker([51.2818, -1.0704], {icon: darkIcon})
+
+   .bindPopup('A33 Reading Rd<br><img
+src="http://www.hants.gov.uk/cctv/WCAM128.jpg" width="387"
+height="290" border="1"><br>nr Popley Way').addTo(romanse),
+
+L.marker([51.2776, -1.0743], {icon: darkIcon})
+
+   .bindPopup('Ringway North/East<br><img
+src="http://www.hants.gov.uk/cctv/WCAM127.jpg" width="387"
+height="290" border="1"><br>North of Rbt, A339/A33').addTo(romanse),
+
+L.marker([51.2761, -1.0757], {icon: darkIcon})
+
+   .bindPopup('Ringway North/East<br><img
+src="http://www.hants.gov.uk/cctv/WCAM126.jpg" width="387"
+height="290" border="1"><br>South of Rbt, A339').addTo(romanse),
+
+L.marker([51.2113, -1.5161], {icon: darkIcon})
+
+   .bindPopup('Hundred Acre roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM142.jpg" width="387"
+height="290" border="1"><br>Weyhill Road').addTo(romanse),
+
+L.marker([51.2098, -1.5180], {icon: darkIcon})
+
+   .bindPopup('Monxton Road roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM143.jpg" width="387"
+height="290" border="1"><br>South of Rbt, A303').addTo(romanse),
+
+L.marker([51.21748, -1.47543], {icon: darkIcon})
+
+   .bindPopup('River Way<br><img
+src="http://www.hants.gov.uk/cctv/WCAM147.jpg" width="387"
+height="290" border="1"><br>Newbury Road, A343').addTo(romanse),
+
+L.marker([51.21589, -1.47616], {icon: darkIcon})
+
+   .bindPopup('Enham Arch<br><img
+src="http://www.hants.gov.uk/cctv/WCAM146.jpg" width="387"
+height="290" border="1"><br>South of Rbt, A3057/A343').addTo(romanse),
+
+L.marker([50.8961, -1.3205], {icon: darkIcon})
+
+   .bindPopup('Windhover roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM069.jpg" width="387"
+height="290" border="1"><br>West of Rbt, Hamble La').addTo(romanse),
+
+L.marker([50.8966, -1.3194], {icon: darkIcon})
+
+   .bindPopup('Windhover roundabout<br><img
+src="http://www.hants.gov.uk/cctv/WCAM070.jpg" width="387"
+height="290" border="1"><br>North of Rbt, Bursledon
+Rd').addTo(romanse),
+
+L.marker([50.8893, -1.578], {icon: darkIcon})
+
+   .bindPopup('A337 north of Lyndhurst<br><img
+src="http://www.hants.gov.uk/cctv/WCAM131.jpg" width="387"
+height="290" border="1"><br>nr Mill Lane').addTo(romanse),
+
+L.marker([51.29773, -0.75353], {icon: darkIcon})
+
+   .bindPopup('Farnborough Rd/Highgate Lane<br><img
+src="http://www.hants.gov.uk/cctv/WCAM185.jpg" width="387"
+height="290" border="1" ><br>A325, Farnborough').addTo(romanse),
+
+L.marker([50.8565, -1.0505], {icon: darkIcon})
+
+   .bindPopup('A3 London Road<br><img
+src="http://www.hants.gov.uk/cctv/WCAM301.jpg" width="387"
+height="290" border="1" ><br>nr Hillside Ave').addTo(romanse),
+
+L.marker([50.8583, -1.0499], {icon: darkIcon})
+
+   .bindPopup('A3 London Road<br><img
+src="http://www.hants.gov.uk/cctv/WCAM302.jpg" width="387"
+height="290" border="1" ><br>nr Lansdowne Ave').addTo(romanse),
+
+L.marker([50.8752, -1.0385], {icon: darkIcon})
+
+   .bindPopup('A3 London Road<br><img
+src="http://www.hants.gov.uk/cctv/WCAM308.jpg" width="387"
+height="290" border="1" ><br>nr Mill Rd').addTo(romanse),
+
+L.marker([50.8888, -1.0244], {icon: darkIcon})
+
+   .bindPopup('A3 London Road<br><img
+src="http://www.hants.gov.uk/cctv/WCAM310.jpg" width="387"
+height="290" border="1" ><br>nr Queens Rd').addTo(romanse),
+
+L.marker([50.8943, -1.0181], {icon: darkIcon})
+
+   .bindPopup('A3 London Road<br><img
+src="http://www.hants.gov.uk/cctv/WCAM311.jpg" width="387"
+height="290" border="1" ><br>nr Durley Ave').addTo(romanse),
+
+L.marker([50.9082, -1.0080], {icon: darkIcon})
+
+   .bindPopup('A3 Portsmouth Road<br><img
+src="http://www.hants.gov.uk/cctv/WCAM314.jpg" width="387"
+height="290" border="1" ><br>Dell Piece West').addTo(romanse),
+
+L.marker([50.9449, -1.4757], {icon: darkIcon})
+
+   .bindPopup('M27 Junction 3<br><img
+src="http://www.hants.gov.uk/cctv/WCAM078.jpg" width="387"
+height="290" border="1" ><br>M271 Southampton').addTo(romanse);
+
+
+
+var soton = new L.LayerGroup();
+
+
+
+L.marker([50.9224, -1.4673], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM1.jpg" width="363" height="290"
+border="1" ><br>Redbridge Tower, M271, A35').addTo(soton),
+
+L.marker([50.95237, -1.4039], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM8.jpg" width="363" height="290"
+border="1" ><br>A33 Chilworth Rbt').addTo(soton),
+
+L.marker([50.93587, -1.40649], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM7.jpg" width="363" height="290"
+border="1" ><br>A35 Burgess Road / A33 The Avenue').addTo(soton),
+
+L.marker([50.93409, -1.41883], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM45.jpg" width="363" height="290"
+border="1" ><br>Winchester Road / Hill Lane').addTo(soton),
+
+L.marker([50.93809, -1.39634], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM40.jpg" width="363" height="290"
+border="1" ><br>University Road / Burgess Road').addTo(soton),
+
+L.marker([50.94048, -1.37748], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM21.jpg" width="363" height="290"
+border="1" ><br>Thomas Lewis Way / Stoneham Way').addTo(soton),
+
+L.marker([50.92969, -1.42688], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM42.jpg" width="363" height="290"
+border="1" ><br>Wilton Road / Winchester Road').addTo(soton),
+
+L.marker([50.92633, -1.44193], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM41.jpg" width="363" height="290"
+border="1" ><br>Romsey Road / Tebourba Way').addTo(soton),
+
+L.marker([50.91723, -1.45682], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM2.jpg" width="363" height="290"
+border="1" ><br>A33 Redbridge Rd / Millbrook Flyover').addTo(soton),
+
+L.marker([50.91334, -1.44355], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM3.jpg" width="363" height="290"
+border="1" ><br>A33 Millbrook Road West / Regents Park
+Road').addTo(soton),
+
+L.marker([50.92573, -1.38624], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM22.jpg" width="363" height="290"
+border="1" ><br>A335 Thomas Lewis Way / A3035 St Denys
+Road').addTo(soton),
+
+L.marker([50.92444, -1.3765], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM51.jpg" width="363" height="290"
+border="1" ><br>Cobden Bridge / Bitterne Park Triangle').addTo(soton),
+
+L.marker([50.92089, -1.40501], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM6.jpg" width="363" height="290"
+border="1" ><br>Stag Gates, A33 The Avenue').addTo(soton),
+
+L.marker([50.90311, -1.33469], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM9.jpg" width="363" height="290"
+border="1" ><br>A3024 Bursledon Road').addTo(soton),
+
+L.marker([50.91605, -1.35992], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM10.jpg" width="363" height="290"
+border="1" ><br>A334 Maybray King Way / Bitterne Road
+West/East').addTo(soton),
+
+L.marker([50.91777, -1.37503], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM11.jpg" width="363" height="290"
+border="1" ><br>A3024 Bitterne Road West / A3035 Bullar
+Rd').addTo(soton),
+
+L.marker([50.91272, -1.38749], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM12.jpg" width="363" height="290"
+border="1" ><br>A3024 Northam Road bridge').addTo(soton),
+
+L.marker([50.91604, -1.39636], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM43.jpg" width="363" height="290"
+border="1" ><br>A335 Bevois Valley Road').addTo(soton),
+
+L.marker([50.91229, -1.4002], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM49.jpg" width="363" height="290"
+border="1" ><br>St Marys Rd / A335 Onslow Road').addTo(soton),
+
+L.marker([50.91072, -1.40045], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM55.jpg" width="363" height="290"
+border="1" ><br>A33 Charlotte Place East').addTo(soton),
+
+L.marker([50.91091, -1.40127], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM5.jpg" width="363" height="290"
+border="1" ><br>A33 Charlotte Place West').addTo(soton),
+
+L.marker([50.90958, -1.40879], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM48.jpg" width="363" height="290"
+border="1" ><br>A3024 Cumberland Place / The Polygon').addTo(soton),
+
+L.marker([50.90676, -1.41472], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM4.jpg" width="363" height="290"
+border="1" ><br>A33 Mountbatten Way / A3024 Western
+Esplanade').addTo(soton),
+
+L.marker([50.90409, -1.41282], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM25.jpg" width="363" height="290"
+border="1" ><br>A33 West Quay Road').addTo(soton),
+
+L.marker([50.90081, -1.40942], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM53.jpg" width="363" height="290"
+border="1" ><br>A33 West Quay Road / Harbour Parade').addTo(soton),
+
+L.marker([50.89635, -1.40454], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM47.jpg" width="363" height="290"
+border="1" ><br>Town Quay / High Street').addTo(soton),
+
+L.marker([50.89697, -1.3978], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM50.jpg" width="363" height="290"
+border="1" ><br>Canute Rd / Queens Terrace / A33 Platform
+Rd').addTo(soton),
+
+L.marker([50.89883, -1.3915], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM52.jpg" width="363" height="290"
+border="1" ><br>Itchen Bridge / Central Bridge').addTo(soton),
+
+L.marker([50.9079, -1.39736], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM13.jpg" width="363" height="290"
+border="1" ><br>Six Dials / A3024 Northam Road / A33
+Kingsway').addTo(soton),
+
+L.marker([50.89801, -1.37531], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM23.jpg" width="363" height="290"
+border="1" ><br>A3025 Itchen Bridge / Portsmouth Road').addTo(soton),
+
+L.marker([50.94092, -1.40688], {icon: redIcon})
+
+   .bindPopup('Southampton CCTV<br><img
+src="http://www.hants.gov.uk/cctv/WCAM39.jpg" width="363" height="290"
+border="1" ><br>A33 Bassett Avenue / A35 Winchester
+Road').addTo(soton)
