@@ -3,6 +3,7 @@ import ReactDom from "react-dom";
 import Paper from "material-ui/Paper";
 import DetailControl from "../controls/detailControl";
 
+var _=lodash;
 class GridDisplay extends Component{
 
   constructor(props) {
@@ -15,12 +16,14 @@ class GridDisplay extends Component{
     this._handleClick = this._handleClick.bind(this);
   }
   _handleClick(event){
-    let currentIndex = event.target.id.slice(-1);
+    console.log(event.target);
+    var currentSrc = event.target.src;
+    let srcIndex = _.findIndex(this.state.mapData,{"src":currentSrc});
     this.setState({
-      currentSrc:this.props.cameraData[currentIndex]["src"],
+      currentSrc:currentSrc,
       currentLatLng:{
-        "lat":this.props.cameraData[currentIndex]["latitude"],
-        "lng":this.props.cameraData[currentIndex]["longitude"]
+        "lat":this.props.cameraData[srcIndex]["latitude"],
+        "lng":this.props.cameraData[srcIndex]["longitude"]
       }
     })
   }
