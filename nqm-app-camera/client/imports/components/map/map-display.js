@@ -62,8 +62,6 @@ class MapDisplay extends Component{
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
         {markers}
-        <Polyline color="red" positions={lanlngList}>
-        </Polyline>
       </Map>
     )
   }
