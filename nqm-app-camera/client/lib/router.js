@@ -4,6 +4,8 @@ import {FlowRouter} from "meteor/kadira:flow-router";
 import connectionManager from "../connection-manager";
 import Header from "../imports/container/layout-container";
 import Contents from "../imports/components/viewer";
+import "leaflet";
+import "leaflet.markercluster";
 
 FlowRouter.route("/", {
   name: "root",

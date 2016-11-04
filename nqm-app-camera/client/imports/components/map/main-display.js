@@ -9,14 +9,26 @@ class MainDisplay extends Component{
 
   constructor(props){
     super(props);
+    this.state={
+      mapData:props.cameraData,
+      currentSrc:"",
+      currentLatLng:{}
+    }
+    this._handleClick = this._handleClick.bind(this);
   }
-
+  _handleClick(srcStr){
+    console.log("click on marker");
+    this.setState({
+      currentSrc:srcStr
+    })
+  }
   render(){
     return(
       <div className="flex-container">
-        <MapDisplay cameraData={this.props.cameraData}/>
-        <GridDisplay cameraData={this.props.cameraData}/>
+        <MapDisplay cameraData={this.state.mapData} onMarker={this._handleClick}/>
+        <GridDisplay cameraData={this.state.mapData} onPicture={this._handleClick}/>
         <Paper className="flex-items" id="detail-control">
+            <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>
         </Paper>
       </div>
     );
@@ -24,7 +36,7 @@ class MainDisplay extends Component{
 }
 
 MainDisplay.propTypes={
-  cameraData:PropTypes.array
+  cameraData: PropTypes.array,
 }
 
 export default MainDisplay;

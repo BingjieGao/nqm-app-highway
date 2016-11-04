@@ -3,7 +3,7 @@ import ReactDom from "react-dom";
 import Paper from "material-ui/Paper";
 import L from 'leaflet';
 import { Map, Marker, Popup, TileLayer,Polygon,Polyline,Rectangle} from 'react-leaflet';
-import DetailControl from "../controls/detailControl";
+import MarkerCluster from "./marker-cluster";
 
 
 let _=lodash;
@@ -12,37 +12,18 @@ class MapDisplay extends Component{
 
   constructor(props) {
     super(props);
-    this.state={
-      mapData:props.cameraData,
-      currentSrc:"",
-      currentLatLng:{}
-    }
     this._handleClick = this._handleClick.bind(this);
   }
   _handleClick(event){
-    var thisLatLng = event.target.getLatLng();
-    let srcIndex = _.findIndex(this.state.mapData,{"latitude":thisLatLng["lat"],"longitude":thisLatLng["lng"]});
-    console.log(this.state.mapData[srcIndex]["src"]);
-    this.setState({
-      currentSrc:this.state.mapData[srcIndex]["src"],
-      currentLatLng:thisLatLng
-    })
+    console.log("map marker clicked");
+    console.log(event.target);
+    this.props.onMarker();
   }
 
-  componentDidMount(){
-    ReactDom.render(
-      <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
-    );
-  }
-  componentDidUpdate(){
-    ReactDom.render(
-      <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
-    );
-  }
 
   renderMap(){
     var lanlngList = [];
-    var markers = _.map(this.state.mapData,(val,i) => {
+    var markers = _.map(this.props.cameraData,(val,i) => {
       var coordinateArray = [val.latitude,val.longitude];
       lanlngList.push(coordinateArray);
       return(
@@ -56,12 +37,12 @@ class MapDisplay extends Component{
       )
     })
     return(
-      <Map center={centerPo} zoom={10}>
+      <Map center={centerPo} zoom={10} scrollWheelZoom={false} touchZoom={false}>
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        {markers}
+        <MarkerCluster data={this.props.cameraData} onClick={this._handleClick} />
       </Map>
     )
   }
@@ -75,7 +56,8 @@ class MapDisplay extends Component{
 }
 
 MapDisplay.propTypes={
-  cameraData:PropTypes.array
+  cameraData:PropTypes.array,
+  onMarker: PropTypes.func
 }
 
 export default MapDisplay;

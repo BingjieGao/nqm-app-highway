@@ -8,36 +8,32 @@ class GridDisplay extends Component{
 
   constructor(props) {
     super(props);
-    this.state={
-      mapData:props.cameraData,
-      currentSrc:"",
-      currentLatLng:{}
-    }
     this._handleClick = this._handleClick.bind(this);
   }
   _handleClick(event){
-    console.log(event.target);
-    var currentSrc = event.target.src;
-    let srcIndex = _.findIndex(this.state.mapData,{"src":currentSrc});
-    this.setState({
-      currentSrc:currentSrc,
-      currentLatLng:{
-        "lat":this.props.cameraData[srcIndex]["latitude"],
-        "lng":this.props.cameraData[srcIndex]["longitude"]
-      }
-    })
+    this.props.onPicture();
+    // console.log(event.target);
+    // var currentSrc = event.target.src;
+    // let srcIndex = _.findIndex(this.state.mapData,{"src":currentSrc});
+    // this.setState({
+    //   currentSrc:currentSrc,
+    //   currentLatLng:{
+    //     "lat":this.props.cameraData[srcIndex]["latitude"],
+    //     "lng":this.props.cameraData[srcIndex]["longitude"]
+    //   }
+    // })
   }
 
-  componentDidMount(){
-    ReactDom.render(
-      <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
-    );
-  }
-  componentDidUpdate(){
-    ReactDom.render(
-      <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
-    );
-  }
+  // componentDidMount(){
+  //   ReactDom.render(
+  //     <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
+  //   );
+  // }
+  // componentDidUpdate(){
+  //   ReactDom.render(
+  //     <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
+  //   );
+  // }
 
   render(){
     let imgs = _.map(this.props.cameraData,(val,i) => {
@@ -57,7 +53,8 @@ class GridDisplay extends Component{
   }
 }
 GridDisplay.propTypes={
-  cameraData:PropTypes.array
+  cameraData:PropTypes.array,
+  onPicture: PropTypes.func
 }
 
 export default GridDisplay;
