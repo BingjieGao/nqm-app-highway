@@ -9,9 +9,11 @@ class VisualExplorer extends Component{
     return <MapWidget />
   }
   render(){
+    var filter = {};
+    var options={sort:{ID:1}}
     return(
       <div className="container">
-        <MapWidget sourceId={Meteor.settings.public.latestId}/>
+        <MapWidget sourceId={Meteor.settings.public.latestId} filter={filter} options={options}/>
       </div>
     )
   }

@@ -85,6 +85,7 @@ class ConnectionManager {
   }
   subscribe() {
     // Pass on to the connection subscribe call.
+    console.log("subscription apply connection ",this._connection,arguments);
     return this._connection.subscribe.apply(this._connection, arguments);
   }
 }
