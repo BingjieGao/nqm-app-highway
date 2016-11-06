@@ -30,7 +30,7 @@ class MapDisplay extends Component{
         <Marker position={coordinateArray} key={i} onClick={this._handleClick}>
           <Popup>
             <span>
-              <img width="240" height="200" src={val.src}></img>
+              <img width="240" height="200" src={"data:image/png;base64,"+val.base64String}></img>
             </span>
           </Popup>
         </Marker>

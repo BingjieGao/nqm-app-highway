@@ -11,7 +11,7 @@ class VisualExplorer extends Component{
   render(){
     return(
       <div className="container">
-        <MapWidget sourceId={Meteor.settings.public.resourceId}/>
+        <MapWidget sourceId={Meteor.settings.public.latestId}/>
       </div>
     )
   }

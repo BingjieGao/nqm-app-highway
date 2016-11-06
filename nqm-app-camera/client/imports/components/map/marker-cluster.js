@@ -22,7 +22,7 @@ class MarkerCluster extends MapLayer{
         className: 'css-icon'
     });
     _.forEach(this.props.data,(val,i) => {
-      var popup ='<span><img width="240" height="200" src='+val.src+'></img></span>';
+      var popup ='<span><img width="240" height="200" src=data:image/png;base64,'+val.base64String+'></img></span>';
       this._markers[''+i+''] = L.marker(new L.LatLng(val.latitude,val.longitude),{
         title:val.src,
         id:i

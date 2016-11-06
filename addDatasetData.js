@@ -40,6 +40,7 @@ function insertData(tdxAPI,config){
         srcArray[i] = srcArray[i].replace(/src\=\"/i,"").replace(/\"/i,"").replace(/width\=.*/i,"");
         var coordinateArray = val.split(",");
         var entry = {
+          ID:i,
           latitude:Number(coordinateArray[0]),
           longitude:Number(coordinateArray[1]),
           src:srcArray[i]

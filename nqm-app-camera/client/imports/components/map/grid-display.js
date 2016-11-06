@@ -12,34 +12,14 @@ class GridDisplay extends Component{
   }
   _handleClick(event){
     this.props.onPicture();
-    // console.log(event.target);
-    // var currentSrc = event.target.src;
-    // let srcIndex = _.findIndex(this.state.mapData,{"src":currentSrc});
-    // this.setState({
-    //   currentSrc:currentSrc,
-    //   currentLatLng:{
-    //     "lat":this.props.cameraData[srcIndex]["latitude"],
-    //     "lng":this.props.cameraData[srcIndex]["longitude"]
-    //   }
-    // })
   }
 
-  // componentDidMount(){
-  //   ReactDom.render(
-  //     <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
-  //   );
-  // }
-  // componentDidUpdate(){
-  //   ReactDom.render(
-  //     <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>,document.getElementById("detail-control")
-  //   );
-  // }
 
   render(){
     let imgs = _.map(this.props.cameraData,(val,i) => {
       return(
         <div className="flex-items" key={i} id={"flex-img"+i}>
-          <img width="100%" src={val.src} id={"main-img"+i}></img>
+          <img width="100%" src={"data:image/png;base64,"+val.base64String} id={"main-img"+i}></img>
         </div>
       )
     });
