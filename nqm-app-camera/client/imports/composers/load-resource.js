@@ -1,32 +1,27 @@
 import connectionManager from "../../connection-manager";
 
-// Loads data for a given resource id from the TDX.
-// filter - an optional query filter to refine the returned data, e.g. {temperature: {$gt: 20}}
-// options - options to tweak the returned data, e.g. { sort: { timestamp: -1 }, limit: 10, fields: {temperature: 1}} will sort by timestamp descending, limit the result to 10 items, and only return the temperature field in each document.
-function loadResourceData({sourceId, filter, options}, onData) {
-  console.log("loadResourceData: ", sourceId, filter, options);
+// Loads resources from the TDX.
+// filter - an optional query filter to refine the returned data, e.g. {name: "my resource"}
+// options - options to tweak the returned data, e.g. { sort: { name: -1 }, limit: 1, fields: {name: 1}} will sort by name descending, limit the result to 1 item, and only return the name field in each document, i.e. return the last resource when sorted alphabetically by name
+function loadResource({filter, options}, onData) {
+  console.log("loadResource: ", filter, options);
 
-  // Subscribe to the datasetData publication using the given filter and options.
-  // The subscription will automatically re-run if any of the parameters change (i.e. resourceId, filter or options).
-  const sub = connectionManager.subscribe("datasetData",sourceId, filter, options, {
+  // Subscribe to the resources publication using the given filter and options.
+  // The subscription will automatically re-run if any of the parameters change (i.e. filter or options).
+  const sub = connectionManager.subscribe("resources",filter, options, {
     onError(err) {
-      console.log("error subscribing to datasetData: " + err.message+" with resourceId="+sourceId);
+      console.log("error subscribing to resources: " + err.message);
     }}
   );
 
+  console.log("loar-resource is"+sub);
+
   if (sub.ready()) {
-    console.log("sub is ready");
-    // The subscription is ready
-    filter = filter || {};
-    // Add filter for dataset data (all datasetData subscriptions are stored in the same collection).
-    filter._d = sourceId;
-    // Fetch the data from the local cache.
-    const datasetData = connectionManager.datasetDataCollection.find(filter,options).fetch();
-    // Pass the data on to the component via the data property.
-    onData(null, {cameraData: datasetData});
-  }else{
-    console.log("subscription is not ready");
+    // The subscription is ready - fetch the local results.
+    const resources = connectionManager.resourceCollection.find(filter,options).fetch();
+    // Pass on to the component via the resources property.
+    onData(null, {resources: resources});
   }
 }
 
-export default loadResourceData;
+export default loadResource;

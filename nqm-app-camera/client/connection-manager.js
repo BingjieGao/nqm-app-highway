@@ -1,6 +1,7 @@
+
 import {Meteor} from "meteor/meteor";
 import {DDP} from "meteor/ddp";
-import TDXApi from "nqm-api-tdx/client-api";
+import {HTTP} from "meteor/http";
 import {ReactiveVar} from "meteor/reactive-var";
 
 // This class manages a DDP connection to a remote TDX DDP server.
@@ -22,10 +23,6 @@ class ConnectionManager {
       console.log("connected to %s", Meteor.settings.public.ddpServerURL);
       this.connected = true;
 
-      // Initialise collections
-      this.resourceCollection = new Mongo.Collection("AS.Resource", { connection: this._connection });
-      this.datasetDataCollection = new Mongo.Collection("DatasetData", { connection: this._connection });
-
       return true;
     } else {
       console.log("failed to create ddp connection to %s", Meteor.settings.ddpServerURL);
@@ -45,6 +42,11 @@ class ConnectionManager {
         console.log("ddpConnection auth result: " + result);
 
         self.authToken = token;
+        self._connection.setUserId(result);
+
+        // Initialise collections
+        self.resourceCollection = new Mongo.Collection("AS.Resource", { connection: self._connection });
+        self.datasetDataCollection = new Mongo.Collection("DatasetData", { connection: self._connection });
 
         // Successfully authenticated - update the reactive variable.
         self.authenticated.set(true);
@@ -57,20 +59,24 @@ class ConnectionManager {
     // Make sure we have a ddp connection.
     this.connect();
 
-    // Initialise the api request with the given credentials
-    const config = {
-      commandHost: Meteor.settings.public.commandHost,
-      queryHost: Meteor.settings.public.queryHost
+    // Initialise the HTTP request with the given credentials
+    var options = {
+      headers: {
+        authorization: "Basic " + shareId + ":" + password },
+        data: {
+          grant_type: "client_credentials",
+        }
     };
-    const api = new TDXApi(config);
-     // Get an auth token from the TDX token endpoint.
-    api.authenticate(shareId,password, function(err, accessToken) {
+
+    // Get an auth token from the TDX token endpoint.
+    HTTP.post(Meteor.settings.public.authServerURL + "/token", options, function(err, result) {
       if (err) {
         console.log("failed to get auth token: " + err.message);
       } else {
-        console.log(accessToken);
+        console.log(result);
+
         // Have a valid auth token - now try and authenticate the DDP channel
-        self.useToken(accessToken);
+        self.useToken(result.data.access_token);
       }
     });
   }
@@ -85,7 +91,6 @@ class ConnectionManager {
   }
   subscribe() {
     // Pass on to the connection subscribe call.
-    console.log("subscription apply connection ",this._connection,arguments);
     return this._connection.subscribe.apply(this._connection, arguments);
   }
 }

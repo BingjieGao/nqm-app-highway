@@ -3,7 +3,7 @@ import {mount} from "react-mounter";
 import {FlowRouter} from "meteor/kadira:flow-router";
 import connectionManager from "../connection-manager";
 import Header from "../imports/container/layout-container";
-import Contents from "../imports/components/viewer";
+import Contents from "../imports/container/viewer-layout";
 import {Meteor} from "meteor/meteor";
 import "leaflet";
 import "leaflet.markercluster";
@@ -11,8 +11,7 @@ import "leaflet.markercluster";
 let sharedkey;
 
 if (Meteor.settings.public.shareId){
-  console.log("shareId exist");
-  sharedkey = Meteor.settings.public.sharedId;
+  sharedkey = Meteor.settings.public.shareId;
 }
 
 // Register a trigger to be called before every route.
@@ -22,10 +21,10 @@ FlowRouter.triggers.enter([function (context, redirect) {
   if (!connectionManager.connected) {
     connectionManager.connect();
   }
-
-  if (!sharedkey){
-    console.log("connectionManager authenticated to ",Meteor.settings.public.shareId,Meteor.settings.public.sharekey);
-    connectionManager.authorise(Meteor.settings.public.shareId, "1234554321");
+  console.log("sharedkey is %s",sharedkey);
+  if (sharedkey){
+    console.log("connectionManager authenticated to ",Meteor.settings.public.shareId,Meteor.settings.public.shareKey);
+    connectionManager.authorise(Meteor.settings.public.shareId, Meteor.settings.public.shareKey);
   }
 
   if (context.queryParams.access_token) {

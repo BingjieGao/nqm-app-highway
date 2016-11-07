@@ -19,7 +19,7 @@ class GridDisplay extends Component{
     let imgs = _.map(this.props.cameraData,(val,i) => {
       return(
         <div className="flex-items" key={i} id={"flex-img"+i}>
-          <img width="100%" src={"data:image/png;base64,"+val.base64String} id={"main-img"+i}></img>
+          <img width="100%" src={val.src} id={"main-img"+i}></img>
         </div>
       )
     });

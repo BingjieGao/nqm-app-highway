@@ -28,6 +28,9 @@ class Layout extends Component{
         padding: "68px 0px 0px 5px"
       }
     };
+    if(this.props.authenticated){
+      console.log("ddp connection is "+this.props.authenticated);
+    }
     var content = this.props.content();
     var viewButton;
 

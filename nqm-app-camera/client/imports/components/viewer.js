@@ -9,11 +9,13 @@ class VisualExplorer extends Component{
     return <MapWidget />
   }
   render(){
-    var filter = {};
-    var options={sort:{ID:1}}
+    var filter = {ID:{$lt:130}};
+    let mongodbOptions = { sort: { ID:1 }};
     return(
       <div className="container">
-        <MapWidget sourceId={Meteor.settings.public.latestId} filter={filter} options={options}/>
+        <MapWidget
+          sourceId={Meteor.settings.public.resourceId}
+        />
       </div>
     )
   }

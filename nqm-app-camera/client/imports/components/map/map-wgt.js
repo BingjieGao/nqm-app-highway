@@ -7,11 +7,16 @@ import Paper from "material-ui/Paper";
 
 class MapWidget extends Component{
   render(){
-    return <MapContainer sourceId={this.props.sourceId}/>
+    return <MapContainer
+            sourceId={this.props.sourceId}
+            options={this.props.options}
+            filter={this.props.filter}
+          />
   }
 }
 MapWidget.propTypes={
-  sourceId:PropTypes.string.isRequired
+  sourceId:PropTypes.string.isRequired,
+  options:PropTypes.object
 }
 
 export default MapWidget;
