@@ -3,7 +3,7 @@ import connectionManager from "../../connection-manager";
 // Loads data for a given resource id from the TDX.
 // filter - an optional query filter to refine the returned data, e.g. {temperature: {$gt: 20}}
 // options - options to tweak the returned data, e.g. { sort: { timestamp: -1 }, limit: 10, fields: {temperature: 1}} will sort by timestamp descending, limit the result to 10 items, and only return the temperature field in each document.
-function loadResourceData({sourceId, filter, options}, onData) {
+function loadResourceData({sourceId, filter, options,subId}, onData) {
   console.log("loadResourceData: ", sourceId, filter, options);
 
   // Subscribe to the datasetData publication using the given filter and options.
@@ -15,8 +15,6 @@ function loadResourceData({sourceId, filter, options}, onData) {
     }}
   );
 
-  console.log(JSON.stringify(sub));
-  console.log(sub.ready());
 
   if (sub.ready()) {
     // The subscription is ready
@@ -25,7 +23,7 @@ function loadResourceData({sourceId, filter, options}, onData) {
     filter._d = sourceId;
     // Fetch the data from the local cache.
     const datasetData = connectionManager.datasetDataCollection.find(filter,options).fetch();
-    console.log(datasetData);
+    //console.log(datasetData);
     // Pass the data on to the component via the data property.
     onData(null, {cameraData: datasetData});
   }

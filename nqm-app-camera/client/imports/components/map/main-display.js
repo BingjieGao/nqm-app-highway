@@ -25,8 +25,8 @@ class MainDisplay extends Component{
   render(){
     return(
       <div className="flex-container">
-        <MapDisplay cameraData={this.state.mapData} onMarker={this._handleClick}/>
-        <GridDisplay cameraData={this.state.mapData} onPicture={this._handleClick}/>
+        <MapDisplay cameraData={this.props.cameraData} timeData={this.props.timeData} onMarker={this._handleClick}/>
+        <GridDisplay cameraData={this.props.cameraData} timeData={this.props.timeData} onPicture={this._handleClick}/>
         <Paper className="flex-items" id="detail-control">
             <DetailControl src={this.state.currentSrc} LatLng={this.state.currentLatLng}/>
         </Paper>

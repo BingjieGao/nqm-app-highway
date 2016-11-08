@@ -1,22 +1,23 @@
 import React,{Component,PropTypes} from "react";
 import { Meteor } from "meteor/meteor";
 
-import MapContainer from "./map-container";
+import MainContainer from "./main-container";
 import Paper from "material-ui/Paper";
 
 
-class MapWidget extends Component{
+class MainWidget extends Component{
   render(){
-    return <MapContainer
+    return <MainContainer
             sourceId={this.props.sourceId}
             options={this.props.options}
-            filter={this.props.filter}
+            timeData = {this.props.timeData}
           />
   }
 }
-MapWidget.propTypes={
+MainWidget.propTypes={
   sourceId:PropTypes.string.isRequired,
-  options:PropTypes.object
+  options:PropTypes.object,
+  timeData:PropTypes.array
 }
 
-export default MapWidget;
+export default MainWidget;

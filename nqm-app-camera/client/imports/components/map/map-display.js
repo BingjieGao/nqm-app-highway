@@ -19,30 +19,16 @@ class MapDisplay extends Component{
     console.log(event.target);
     this.props.onMarker();
   }
-
-
+  
   renderMap(){
     var lanlngList = [];
-    // var markers = _.map(this.props.cameraData,(val,i) => {
-    //   var coordinateArray = [val.latitude,val.longitude];
-    //   lanlngList.push(coordinateArray);
-    //   return(
-    //     <Marker position={coordinateArray} key={i} onClick={this._handleClick}>
-    //       <Popup>
-    //         <span>
-    //           <img width="240" height="200" src={"data:image/png;base64,"+val.base64String}></img>
-    //         </span>
-    //       </Popup>
-    //     </Marker>
-    //   )
-    // })
     return(
       <Map center={centerPo} zoom={10} scrollWheelZoom={false} touchZoom={false}>
         <TileLayer
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         />
-        <MarkerCluster data={this.props.cameraData} onClick={this._handleClick} />
+        <MarkerCluster data={this.props.cameraData} timeData={this.props.timeData} onClick={this._handleClick} />
       </Map>
     )
   }
