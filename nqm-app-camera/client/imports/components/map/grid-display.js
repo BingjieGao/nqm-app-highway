@@ -21,8 +21,7 @@ class GridDisplay extends Component{
       if(err)
         console.log(err);
       else if(response.length>0){
-        //console.log(response);
-        this.props.onPicture(response);
+        document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+response;
       }
     })
   }
