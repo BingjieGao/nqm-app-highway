@@ -2,29 +2,63 @@ import React,{Component,PropTypes}from "react";
 import ReactDom from "react-dom";
 import Paper from "material-ui/Paper";
 import DetailControl from "../controls/detailControl";
+import Slider from 'material-ui/Slider';
+import { Meteor } from "meteor/meteor";
 
 var _=lodash;
 class GridDisplay extends Component{
 
   constructor(props) {
     super(props);
-    this._handleClick = this._handleClick.bind(this);
+    this.state={
+      timestampArray:new Array(128).fill(0),
+      currentBase64String:""
+    }
+    this._handleSlider = this._handleSlider.bind(this);
   }
-  _handleClick(event){
-    this.props.onPicture();
+  _handleHTTPcalls(folderName,fileIndex){
+    Meteor.call("getBase64String",folderName,fileIndex,(err,response) => {
+      if(err)
+        console.log(err);
+      else if(response.length>0){
+        //console.log(response);
+        this.props.onPicture(response);
+      }
+    })
   }
-
+  _handleSlider(event,value){
+    var index = String(event.target.nextSibling.getAttribute("name")).replace("slider","");
+    var cloneArray = this.state.timestampArray.slice(0);
+    cloneArray[Number(index)] = value;
+    this.setState({
+      timestampArray:cloneArray
+    });
+    console.log(index);
+    console.log(value)
+    this._handleHTTPcalls(index,(10-value));
+  }
   render(){
     let imgs = _.map(this.props.cameraData,(val,i) => {
       return(
         <div className="flex-items" key={i} id={"flex-img"+i}>
           <img width="100%" src={val.src.trim()+"?timestamp="+this.props.timeData[i]["timestamp"].getTime()} id={"main-img"+i}></img>
+          <div id={"slider"+i}>
+            <Slider 
+              min={0}
+              max={10}
+              step={1}
+              defaultValue={0}
+              value={this.state.timestampArray[i]}
+              name={"slider"+i}
+              onChange={this._handleSlider}
+            />
+          </div>
         </div>
       )
     });
     return(
         <Paper className="flex-items" id="main-grid">
-          <div className="flex-container" onClick={this._handleClick}>
+          <div className="flex-container">
             {imgs}
           </div>
         </Paper>

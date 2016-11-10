@@ -10,11 +10,11 @@ class DetailControl extends Component{
   }
 
   render(){
-    //console.log(this.props.src);
+
     return(
       <div id="details">
         <span>
-          <img width="100%" src={this.props.src}></img>
+          <img width="100%" src={"data:image/png;base64,"+this.props.src}></img>
         </span>
         <h4>Latitude:{this.props.LatLng["lat"]}</h4>
         <h4>Longitude: {this.props.LatLng["lng"]}</h4>

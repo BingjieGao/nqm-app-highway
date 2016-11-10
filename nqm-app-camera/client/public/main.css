@@ -39,7 +39,7 @@ html, body {
   height:30px;
 }
 #detail-control,#order2{
-  width:24%;
+  width:19%;
   -webkit-order:2;
   order:2;
 }

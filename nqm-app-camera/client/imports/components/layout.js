@@ -34,7 +34,7 @@ class Layout extends Component{
     var content = this.props.content();
     var viewButton;
 
-    viewButton = <IconButton iconClassName="material-icons" onTouchTap={this._switchView}>view_comfy</IconButton>
+    viewButton = <IconButton iconClassName="material-icons" id="switch-view" onTouchTap={this._switchView}>view_comfy</IconButton>
     return (
       <MuiThemeProvider>
         <div>

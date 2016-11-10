@@ -17,9 +17,8 @@ class MapDisplay extends Component{
   _handleClick(event){
     console.log("map marker clicked");
     console.log(event.target);
-    this.props.onMarker();
   }
-  
+
   renderMap(){
     var lanlngList = [];
     return(
@@ -42,8 +41,9 @@ class MapDisplay extends Component{
 }
 
 MapDisplay.propTypes={
-  cameraData:PropTypes.array,
-  onMarker: PropTypes.func
+  cameraData:PropTypes.array.isRequired,
+  timeData:PropTypes.array.isRequired,
+  onDataChange:PropTypes.func
 }
 
 export default MapDisplay;
