@@ -9,9 +9,8 @@ class MainDisplay extends Component{
 
   constructor(props){
     super(props);
-    var originalData = props.cameraData;
     this.state={
-      mapData:originalData,
+      mapData:[],
       currentSrc:"",
       currentLatLng:{},
       updateState:true
@@ -24,9 +23,15 @@ class MainDisplay extends Component{
       currentSrc:srcStr
     })
   }
+  componentWillMount(){
+    this.setState({
+      mapData:this.props.cameraData
+    })
+  }
 
   componentWillReceiveProps(nextProps){
-    if(document.getElementById("main-grid").style.display == "block" && this.state.updateState){
+    console.log(this.state.updateState);
+    if(document.getElementById("main-grid").style.display == "block" && this.state.updateState == true){
       console.log("will receive");
       this.setState({
         mapData:nextProps.cameraData,
