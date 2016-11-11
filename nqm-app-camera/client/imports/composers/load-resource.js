@@ -14,8 +14,6 @@ function loadResource({filter, options}, onData) {
     }}
   );
 
-  console.log("loar-resource is"+sub);
-
   if (sub.ready()) {
     // The subscription is ready - fetch the local results.
     const resources = connectionManager.resourceCollection.find(filter,options).fetch();

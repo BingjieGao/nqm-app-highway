@@ -8,7 +8,6 @@ function loadResourceData({sourceId, filter, options,subId}, onData) {
 
   // Subscribe to the datasetData publication using the given filter and options.
   // The subscription will automatically re-run if any of the parameters change (i.e. resourceId, filter or options).
-  console.log(typeof sourceId);
   const sub = connectionManager.subscribe("datasetData",sourceId,filter,options, {
     onError(err) {
       console.log("error subscribing to datasetData: " + err.message+" with resourceId="+sourceId);

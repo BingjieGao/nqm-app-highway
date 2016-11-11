@@ -1,6 +1,7 @@
 import React,{PropTypes} from "react";
 import ReactDOM from 'react-dom';
 import {MapLayer} from "react-leaflet";
+import LinearProgress from 'material-ui/LinearProgress';
 
 let _=lodash;
 class MarkerCluster extends MapLayer{

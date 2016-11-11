@@ -32,8 +32,6 @@ class ConnectionManager {
   useToken(token) {
     var self = this;
 
-    console.log("authenticating ddp connection");
-
     // Call the TDX server, passing our auth token.
     this._connection.call("/app/jwtAuth", token, function (err, result) {
       if (err) {
@@ -73,8 +71,6 @@ class ConnectionManager {
       if (err) {
         console.log("failed to get auth token: " + err.message);
       } else {
-        console.log(result);
-
         // Have a valid auth token - now try and authenticate the DDP channel
         self.useToken(result.data.access_token);
       }

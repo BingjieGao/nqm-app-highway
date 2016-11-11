@@ -21,9 +21,8 @@ FlowRouter.triggers.enter([function (context, redirect) {
   if (!connectionManager.connected) {
     connectionManager.connect();
   }
-  console.log("sharedkey is %s",sharedkey);
   if (sharedkey){
-    console.log("connectionManager authenticated to ",Meteor.settings.public.shareId,Meteor.settings.public.shareKey);
+    //console.log("connectionManager authenticated to ",Meteor.settings.public.shareId,Meteor.settings.public.shareKey);
     connectionManager.authorise(Meteor.settings.public.shareId, Meteor.settings.public.shareKey);
   }
 

@@ -20,13 +20,28 @@ class GridDisplay extends Component{
     Meteor.call("getBase64String",folderName,fileIndex,(err,response) => {
       if(err)
         console.log(err);
-      else if(response.length>0){
-        document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+response;
+      else{
+        response = JSON.parse(response);
+        document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+new Buffer(response.base64String.data).toString("base64");
       }
     })
   }
   _handleSlider(event,value){
-    var index = String(event.target.nextSibling.getAttribute("name")).replace("slider","");
+    // var pos1 = String(event.target.nextSibling.getAttribute("name"));
+    // var pos2 = String(event.target.getAttribute("id"));
+    // var pos3 = String(event.target.parentNode.nextSibling.getAttribute("name"));
+    //var index = String(event.target.nextSibling.getAttribute("name")).replace("slider","");
+    var index;
+    var target = event.target;
+    if(target.nextSibling.getAttribute("name") != null){
+      index = String(target.nextSibling.getAttribute("name")).replace("slider","");
+    }else if(event.target.parentNode.parentNode.nextSibling != null){
+      index = String(event.target.parentNode.parentNode.nextSibling.getAttribute("name")).replace("slider","");
+    }else{
+      index = String(event.target.getAttribute("id")).replace("flex-img","");
+    }
+    console.log(index);
+
     var cloneArray = this.state.timestampArray.slice(0);
     cloneArray[Number(index)] = value;
     this.setState({

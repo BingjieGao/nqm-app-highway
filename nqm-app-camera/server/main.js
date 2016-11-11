@@ -11,11 +11,11 @@ Meteor.startup(() => {
       var options = {
                       headers: 
                         {
-                          'Content-Type': 'text/html',
+                          'Content-Type': 'application/json',
                           "User-Agent": "Meteor/1.0"
                         },
                       npmRequestOptions: {
-                          encoding: "base64"
+                          encoding: "utf-8"
                         }
                     }
       Promise.promisifyAll(HTTP);
