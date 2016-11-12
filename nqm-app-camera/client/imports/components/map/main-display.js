@@ -11,6 +11,7 @@ class MainDisplay extends Component{
     super(props);
     this.state={
       mapData:[],
+      sliderTime:this.props.timeData[0]["timestamp"],
       currentSrc:"",
       currentLatLng:{},
       updateState:true
@@ -25,16 +26,17 @@ class MainDisplay extends Component{
   }
   componentWillMount(){
     this.setState({
-      mapData:this.props.cameraData
+      mapData:this.props.cameraData,
+      sliderTime: this.props.timeData[0]["timestamp"]
     })
   }
 
   componentWillReceiveProps(nextProps){
-    console.log(this.state.updateState);
     if(document.getElementById("main-grid").style.display == "block" && this.state.updateState == true){
       console.log("will receive");
       this.setState({
         mapData:nextProps.cameraData,
+        sliderTime: nextProps.timeData[0]["timestamp"],
         updateState:false
       })
     }else if(document.getElementById("main-grid").style.display == "none"){
@@ -48,7 +50,7 @@ class MainDisplay extends Component{
     return(
       <div className="flex-container">
         <MapDisplay cameraData={this.props.cameraData} timeData={this.props.timeData}/>
-        <GridDisplay cameraData={this.state.mapData} timeData={this.props.timeData} onPicture={this._handleClick}/>
+        <GridDisplay cameraData={this.state.mapData} sliderTime={this.state.sliderTime} onPicture={this._handleClick}/>
       </div>
     );
   }

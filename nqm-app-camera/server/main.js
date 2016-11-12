@@ -22,7 +22,7 @@ Meteor.startup(() => {
       return HTTP.callAsync("GET",getURL,options)
         .then((response) => {
           console.log("meteor server response");
-          console.log(response.content);
+          //console.log(response.content);
           return response.content;
         })
         .catch((err) => {
