@@ -9,16 +9,10 @@ import IconButton from "material-ui/IconButton";
 
 class Layout extends Component{
 
-  _switchView(){
-    var mapState = document.getElementById("main-map").style.display;
-    if(mapState == "none"){
-      document.getElementById("main-grid").style.display = "none";
-      document.getElementById("main-map").style.display = "block";
-    }else {
-      document.getElementById("main-map").style.display = "none";
-      document.getElementById("main-grid").style.display = "block";
-    }
+  _logout(){
+
   }
+
   render() {
     var styles = {
       appBar: {
@@ -34,7 +28,7 @@ class Layout extends Component{
     var content = this.props.content();
     var viewButton;
 
-    viewButton = <IconButton iconClassName="material-icons" id="switch-view" onTouchTap={this._switchView}>view_comfy</IconButton>
+    viewButton = <IconButton iconClassName="material-icons" id="switch-view" onTouchTap={this._logout}>view_comfy</IconButton>
     return (
       <MuiThemeProvider>
         <div>
