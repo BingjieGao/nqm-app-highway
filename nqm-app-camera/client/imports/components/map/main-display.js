@@ -14,14 +14,14 @@ class MainDisplay extends Component{
   constructor(props){
     super(props);
     this.state={
-      sliderTime:this.props.timeData[0]["timestamp"],
+      currentTime:this.props.timeData[0]["timestamp"],
+      currentIndex:this.props.timeData[0]["DictIndex"],
       currentSrc:"",
       currentLatLng:{},
       updateState:true,
       mapDisplay:true,
       gridDisplay:false
     }
-    this._handleClick = this._handleClick.bind(this);
     this._switchView = this._switchView.bind(this);
   }
 
@@ -30,7 +30,7 @@ class MainDisplay extends Component{
       this.setState({
         mapDisplay:false,
         gridDisplay:true,
-        sliderTime:this.props.timeData[0]["timestamp"]
+        currentTime:this.props.timeData[0]["timestamp"]
       })
     }else{
       this.setState({
@@ -40,24 +40,24 @@ class MainDisplay extends Component{
     }
   }
 
-  _handleClick(srcStr){
-    console.log("click on grid");
-    this.setState({
-      currentSrc:srcStr
-    })
-  }
+
   componentWillMount(){
     this.setState({
-      sliderTime: this.props.timeData[0]["timestamp"]
+      currentTime: this.props.timeData[0]["timestamp"]
     })
   }
 
   componentWillReceiveProps(nextProps){
     var self = this;
+  
     if(self.state.gridDisplay == false && self.state.mapDisplay == true){
       this.setState({
-        sliderTime: this.props.timeData[0]["timestamp"]
+        currentTime: this.props.timeData[0]["timestamp"]
       });
+    }else{
+      this.setState({
+        currentIndex:this.props.timeData[0]["DictIndex"] - 1
+      })
     }
   }
 
@@ -69,7 +69,7 @@ class MainDisplay extends Component{
       mapDisplay = (<MapDisplay cameraData={self.props.cameraData} timeData={this.props.timeData}/>);
     }
     if(self.state.gridDisplay == true){
-      gridDisplay = (<GridDisplay cameraData={self.props.cameraData} sliderTime={self.state.sliderTime} onPicture={this._handleClick}/>);
+      gridDisplay = (<GridDisplay cameraData={self.props.cameraData} currentTime={self.state.currentTime} currentIndex={self.state.currentIndex}/>);
     }
     return(
         <div className="flex-container">
