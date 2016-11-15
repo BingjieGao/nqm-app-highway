@@ -67,26 +67,29 @@ class GridDisplay extends Component{
   }
 
   render(){
- 
+    const styleNevigate = {
+      right:{
+        float:"right"
+      }
+    }
     let imgs = _.map(this.props.cameraData,(val,i) => {
       return(
         <div className="flex-items" key={val.ID} id={"flex-img"+val.ID}>
           <img width="100%" src={val.src.trim()+"?timestamp="+this.props.currentTime.getTime()} id={"main-img"+val.ID}></img>
           <div className="slider-timestamp" id={"img-timestamp"+val.ID}>{this.props.currentTime.toUTCString()}</div>
-          <div id={"slider"+val.ID}>
+          <div id={"slider"+val.ID} className="prev-next">
             <IconButton iconClassName="material-icons" onTouchTap={this._getPrev} disabled={this.props.disableBefore}>navigate_before</IconButton>
-            <IconButton iconClassName="material-icons" onTouchTap={this._getPlay} >play_circle_outline</IconButton>
-            <IconButton iconClassName="material-icons" onTouchTap={this._getNext} disabled={this.props.disableNext}>navigate_next</IconButton>
+            <IconButton iconClassName="material-icons" onTouchTap={this._getNext} disabled={this.props.disableNext} style={styleNevigate.right}>navigate_next</IconButton>
           </div>
         </div>
       )
     });
     return(
-        <Paper className="flex-items" id="main-grid">
+        <div id="main-grid">
           <div className="flex-container">
             {imgs}
           </div>
-        </Paper>
+        </div>
     )
   }
 }

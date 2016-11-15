@@ -49,3 +49,12 @@ FlowRouter.route("/auth-server", {
     window.location = Meteor.settings.public.authServerURL + "/auth/?rurl=" + window.location.href;
   }]
 });
+
+// Logout 
+FlowRouter.route("/logout", {
+  name: "logout",
+  triggersEnter: [function (context, redirect) {
+    connectionManager.logout();
+    redirect("/");
+  }]
+});

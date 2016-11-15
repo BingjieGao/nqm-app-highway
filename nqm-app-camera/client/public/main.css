@@ -23,10 +23,10 @@ html, body {
   margin-top: 10px;
 }
 #main-map,#main-grid{
-  width:95%;
+  width:100%;
   -webkit-order:1;
   order:1;
-  z-index:1;
+  z-index:0;
 }
 
 .leaflet-container {
@@ -72,3 +72,10 @@ html, body {
 /*
 * material-icon next prev GridList
 */
+
+#floating-btn{
+  position:fixed;
+  z-index:9999;
+  right:10px;
+  bottom: 20px;
+}

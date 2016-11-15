@@ -5,9 +5,9 @@ import L from 'leaflet';
 import { Map, Marker, Popup, TileLayer,Polygon,Polyline,Rectangle} from 'react-leaflet';
 import MarkerCluster from "./marker-cluster";
 import Control from 'react-leaflet-control';
-import LinearProgress from 'material-ui/LinearProgress';
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import CircularProgress from 'material-ui/CircularProgress';
+import RefreshIndicator from 'material-ui/RefreshIndicator';
 
 
 let _=lodash;
@@ -18,16 +18,20 @@ class MapDisplay extends Component{
     super(props);
     this._handleClick = this._handleClick.bind(this);
     this.state={
-      completed:1000
+      completed:"hide"
     }
   }
-  componentDidMount() {
-    this.timer = setTimeout(() => this.progress(5), 1000);
+  // componentDidUpdate() {
+  //   this.setState({
+  //     completed:"hide"
+  //   })
+  // }
+  componentWillReceiveProps(){
+    this.setState({
+      completed:"loading"
+    })
   }
 
-  componentWillUnmount() {
-    clearTimeout(this.timer);
-  }
   progress(completed) {
     if (completed > 100) {
       this.setState({completed: 100});
@@ -44,6 +48,12 @@ class MapDisplay extends Component{
 
   renderMap(){
     var lanlngList = [];
+    const style = {
+      refresh: {
+        display: 'inline-block',
+        position: 'relative',
+      }
+    };
     return(
       <Map center={centerPo} zoom={10} scrollWheelZoom={false} touchZoom={false}>
         <TileLayer
@@ -53,7 +63,13 @@ class MapDisplay extends Component{
         <Control position="topleft" >
           <div className="progress-bar">
             <MuiThemeProvider>
-              <CircularProgress />
+              <RefreshIndicator
+                size={40}
+                left={10}
+                top={0}
+                status={this.state.completed}
+                style={style.refresh}
+              />
             </MuiThemeProvider>
           </div>
         </Control>
@@ -63,9 +79,9 @@ class MapDisplay extends Component{
   }
   render(){
     return(
-        <Paper className="flex-items" id="main-map" hidden={this.props.mapView}>
+        <div id="main-map" hidden={this.props.mapView}>
           {this.renderMap()}
-        </Paper>
+        </div>
     )
   }
 }

@@ -46,6 +46,7 @@ class MainDisplay extends Component{
   }
   _checkStateIndex(){
     console.log('check Index now is '+this.state.currentIndex);
+    console.log("current dict length is "+ this.props.timeData[0]["DictIndex"]);
     if(this.state.currentIndex >0 ){
       this.setState({
         disableBefore: false
@@ -69,6 +70,7 @@ class MainDisplay extends Component{
     this.setState({
       currentIndex:currentIndex
     });
+    this._checkStateIndex();
   }
 
   componentWillMount(){
@@ -92,7 +94,29 @@ class MainDisplay extends Component{
     this._checkStateIndex();
   }
 
+
   render(){
+    const appBarHeight = Meteor.settings.public.showAppBar !== false ? 50 : 0;
+    const leftPanelWidth = 170;
+    const styles = {
+      root: {
+        height: "100%"
+      },
+      mainPanel: {
+        position: "absolute",        
+        top: appBarHeight,
+        bottom: 0,
+        left: 0,
+        right: 0
+      },
+      leftPanel: {
+        background: "white",
+        position: "fixed",
+        top: appBarHeight,
+        bottom: 0,
+        width: leftPanelWidth
+      }
+    };
     let mapDisplay, gridDisplay = null;
     if(this.state.mapDisplay == true){
       mapDisplay = (<MapDisplay cameraData={this.props.cameraData} timeData={this.props.timeData}/>);
@@ -108,13 +132,18 @@ class MainDisplay extends Component{
                     />);
     }
     return(
-        <div className="flex-container">
-          <FloatingActionButton>
-            <FontIcon className="material-icons switch-view" onTouchTap={this._switchView}>view_comfy</FontIcon>
-          </FloatingActionButton>
-          {mapDisplay}
-          {gridDisplay}
+        <div style={styles.root}>
+          <div style={styles.mainPanel}>
+            {mapDisplay}
+            {gridDisplay}
+          </div>
+          <div id="floating-btn">
+            <FloatingActionButton>
+              <FontIcon className="material-icons switch-view" onTouchTap={this._switchView}>view_comfy</FontIcon>
+            </FloatingActionButton>
+          </div>
         </div>
+        
     );
   }
 }
