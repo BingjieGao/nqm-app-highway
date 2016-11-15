@@ -12,13 +12,17 @@ class GridDisplay extends Component{
   constructor(props) {
     super(props);
     this.state={
-      timestampArray:new Array(128).fill(0),
       currentBase64String:"",
-      currentIndex:this.props.currentIndex
+      currentIndex:this.props.currentIndex,
+      disableBefore: false,
+      disableNext: true
     }
     this._getPrev = this._getPrev.bind(this);
     this._getNext = this._getNext.bind(this);
 
+  }
+  _onChangeIndex(currentIndex){
+    this.props.changeStateIndex(currentIndex);
   }
   _handleHTTPcalls(folderName,fileIndex){
     Meteor.call("getBase64String",folderName,fileIndex,(err,response) => {
@@ -32,8 +36,9 @@ class GridDisplay extends Component{
             document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+new Buffer(response.base64String.data).toString("base64");
             document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
             this.setState({
-              currentIndex:fileIndex - 1
-            })
+              currentIndex:fileIndex
+            });
+            this._onChangeIndex(fileIndex);
           }
         }
       }
@@ -41,18 +46,24 @@ class GridDisplay extends Component{
   }
   _getPrev(event){
     var folderName = String(event.target.parentNode.parentNode.parentNode.getAttribute("id")).replace("slider","");
-    console.log(folderName);
-    var fileIndex = this.state.currentIndex - 1;
-    this._handleHTTPcalls(folderName,fileIndex);
+    var fileIndex = this.props.currentIndex - 1;
+    if(fileIndex<0 || fileIndex>Meteor.settings.public.imgLength){
+
+    }else{
+      this._handleHTTPcalls(folderName,fileIndex);
+    }
   }
   _getPlay(event){
     
   }
   _getNext(event){
     var folderName = String(event.target.parentNode.parentNode.parentNode.getAttribute("id")).replace("slider","");
-    var fileIndex = this.state.currentIndex + 1;
-    console.log(folderName);
-    this._handleHTTPcalls(folderName,fileIndex);
+    var fileIndex = this.props.currentIndex + 1;
+    if(fileIndex<0 || fileIndex>Meteor.settings.public.imgLength){
+
+    }else{
+      this._handleHTTPcalls(folderName,fileIndex);
+    }
   }
 
   render(){
@@ -63,9 +74,9 @@ class GridDisplay extends Component{
           <img width="100%" src={val.src.trim()+"?timestamp="+this.props.currentTime.getTime()} id={"main-img"+val.ID}></img>
           <div className="slider-timestamp" id={"img-timestamp"+val.ID}>{this.props.currentTime.toUTCString()}</div>
           <div id={"slider"+val.ID}>
-            <IconButton iconClassName="material-icons" onTouchTap={this._getPrev}>navigate_before</IconButton>
-            <IconButton iconClassName="material-icons" onTouchTap={this._getPlay}>play_circle_outline</IconButton>
-            <IconButton iconClassName="material-icons" onTouchTap={this._getNext}>navigate_next</IconButton>
+            <IconButton iconClassName="material-icons" onTouchTap={this._getPrev} disabled={this.props.disableBefore}>navigate_before</IconButton>
+            <IconButton iconClassName="material-icons" onTouchTap={this._getPlay} >play_circle_outline</IconButton>
+            <IconButton iconClassName="material-icons" onTouchTap={this._getNext} disabled={this.props.disableNext}>navigate_next</IconButton>
           </div>
         </div>
       )
@@ -81,7 +92,10 @@ class GridDisplay extends Component{
 }
 GridDisplay.propTypes={
   cameraData:PropTypes.array,
-  currentIndex:PropTypes.number
+  currentIndex:PropTypes.number,
+  changeStateIndex:PropTypes.func,
+  disableBefore: PropTypes.bool,
+  disableNext: PropTypes.bool
 }
 
 export default GridDisplay;
