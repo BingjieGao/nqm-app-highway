@@ -6,7 +6,7 @@ Meteor.startup(() => {
   // code to run on server at startup
   Meteor.methods({
     "getBase64String":function(folderName,fileIndex){
-      var getURL = "http://localhost:3100/img/"+folderName+"/"+fileIndex;
+      var getURL = "https://nqm-databot-highwaygrab.nq-m.com/img/"+folderName+"/"+fileIndex;
       console.log(getURL);
       var options = {
                       headers: 
