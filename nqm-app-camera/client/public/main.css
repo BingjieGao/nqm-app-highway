@@ -2,8 +2,12 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Roboto, sans-serif;
+  height: 100%;
 }/* CSS declarations go here */
-
+.leaflet-container {
+    height: 100%;
+    width: 100%;
+}
 .flex-container,.flex-inner-container{
   padding: 0;
   margin: 0;
@@ -24,15 +28,10 @@ html, body {
 }
 #main-map,#main-grid{
   width:100%;
-  -webkit-order:1;
-  order:1;
+  height:100%;
   z-index:0;
 }
 
-.leaflet-container {
-  height: 600px;
-  width: 100%;
-}
 .img-items{
   width:36px;
   height:30px;
