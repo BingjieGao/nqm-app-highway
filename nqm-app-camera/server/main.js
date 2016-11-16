@@ -7,7 +7,7 @@ Meteor.startup(() => {
   // code to run on server at startup
   Meteor.methods({
     "getBase64String":function(folderName,fileIndex){
-      var getURL = "http://localhost:3100/img/"+folderName+"/"+fileIndex;
+      var getURL = "https://nqm-app-highway.nq-m.com/img/"+folderName+"/"+fileIndex;
       console.log(getURL);
       var options = {
                       headers: 
@@ -23,16 +23,17 @@ Meteor.startup(() => {
       return HTTP.callAsync("GET",getURL,options)
         .then((response) => {
           console.log("meteor server response");
-          //console.log(response);
+          console.log(response);
           return response.content;
         })
         .catch((err) => {
           console.log("meteor server error");
+          console.log(err);
           return err;
         })
     },
     "getTimestamp":function(folderName,fileIndex){
-      var getURL = "http://localhost:3100/id/"+folderName+"/"+fileIndex;
+      var getURL = "https://nqm-app-highway.nq-m.com/id/"+folderName+"/"+fileIndex;
       var options = {
                       headers: 
                         {
@@ -47,12 +48,12 @@ Meteor.startup(() => {
       Promise.promisifyAll(HTTP);
       return HTTP.callAsync("GET",getURL,options)
         .then((response) => {
-          console.log("meteor server response");
+          console.log("meteor server response timestamp");
           //console.log(response);
           return response.content;
         })
         .catch((err) => {
-          console.log("meteor server error");
+          console.log("meteor server error timestamp");
           return err;
         })
     }

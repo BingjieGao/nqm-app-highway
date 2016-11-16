@@ -33,6 +33,10 @@ class GridDisplay extends Component{
           if(response.length>0){
             document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+response;
             //document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
+            this.setState({
+            currentIndex:fileIndex
+          });
+          this._onChangeIndex(fileIndex);
           }
         }
       }
