@@ -29,18 +29,25 @@ class GridDisplay extends Component{
       if(err)
         console.log(err);
       else{
-        //console.log(response);
         if(response == "NO IMAGE"){}else{
-          
-          //response = JSON.parse(response);
           if(response.length>0){
             document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+response;
             //document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
-            this.setState({
-              currentIndex:fileIndex
-            });
-            this._onChangeIndex(fileIndex);
           }
+        }
+      }
+    });
+    Meteor.call("getTimestamp",folderName,fileIndex,(err,response) => {
+      if(err)
+        console.log(err);
+      else{
+        if(response == "NO IMAGE"){}else{
+          response = JSON.parse(response);
+          document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
+          this.setState({
+            currentIndex:fileIndex
+          });
+          this._onChangeIndex(fileIndex);
         }
       }
     })

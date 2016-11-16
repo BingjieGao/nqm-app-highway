@@ -23,8 +23,32 @@ Meteor.startup(() => {
       return HTTP.callAsync("GET",getURL,options)
         .then((response) => {
           console.log("meteor server response");
-          //response = JSON.parse(response);
-          console.log(response);
+          //console.log(response);
+          return response.content;
+        })
+        .catch((err) => {
+          console.log("meteor server error");
+          return err;
+        })
+    },
+    "getTimestamp":function(folderName,fileIndex){
+      var getURL = "http://localhost:3100/id/"+folderName+"/"+fileIndex;
+      var options = {
+                      headers: 
+                        {
+                          'Content-Type': 'application/json',
+                          "User-Agent": "Meteor/1.0"
+                        },
+                      npmRequestOptions: {
+                          encoding: "utf-8"
+                        }
+                    }
+      console.log(getURL);
+      Promise.promisifyAll(HTTP);
+      return HTTP.callAsync("GET",getURL,options)
+        .then((response) => {
+          console.log("meteor server response");
+          //console.log(response);
           return response.content;
         })
         .catch((err) => {
