@@ -4,7 +4,7 @@ import Paper from "material-ui/Paper";
 import L from 'leaflet';
 import { Map, Marker, Popup, TileLayer,Polygon,Polyline,Rectangle} from 'react-leaflet';
 import MarkerCluster from "./marker-cluster";
-import Control from 'react-leaflet-control';
+import Control from './react-leaflet-control';
 import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
 import CircularProgress from 'material-ui/CircularProgress';
 import RefreshIndicator from 'material-ui/RefreshIndicator';
