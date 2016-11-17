@@ -49,7 +49,7 @@ class MainDisplay extends Component{
       return val>0?false:true;
     });
     var newNextArray = _.map(this.state.indexArray,(val) =>{
-      return val>=this.props.timeData[0]['DictIndex']?true:false;
+      return val<this.props.timeData[0]['DictIndex']?false:true;
     });
     this.setState({
       disableBeforeArray: newBeforeArray,
@@ -118,6 +118,7 @@ class MainDisplay extends Component{
       gridDisplay = (<GridDisplay 
                         cameraData={this.props.cameraData} 
                         currentTime={this.state.currentTime} 
+                        imgLength={this.props.timeData[0]["DictIndex"]}
                         indexArray={this.state.indexArray}
                         changeStateIndex={this._changeStateIndex}
                         disableBeforeArray={this.state.disableBeforeArray}

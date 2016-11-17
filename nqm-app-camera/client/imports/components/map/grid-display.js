@@ -17,10 +17,28 @@ class GridDisplay extends Component{
     }
     this._getPrev = this._getPrev.bind(this);
     this._getNext = this._getNext.bind(this);
+    this._handleHTTPcalls = this._handleHTTPcalls.bind(this);
+    this._requestTimestamp = this._requestTimestamp.bind(this);
 
   }
   _onChangeIndex(indexArray){
     this.props.changeStateIndex(indexArray);
+  }
+
+  _requestTimestamp(folderName,fileIndex){
+    Meteor.call("getTimestamp",folderName,fileIndex,(err,response) => {
+      if(err)
+        console.log(err);
+      else{
+        if(response == "NO IMAGE"){}else{
+          response = JSON.parse(response);
+          document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
+          var newIndexArray = [].concat(this.props.indexArray);
+            newIndexArray[folderName] = fileIndex;
+            this._onChangeIndex(newIndexArray);
+        }
+      }
+    })
   }
   _handleHTTPcalls(folderName,fileIndex){
     Meteor.call("getBase64String",folderName,fileIndex,(err,response) => {
@@ -30,33 +48,16 @@ class GridDisplay extends Component{
         if(response == "NO IMAGE"){}else{
           if(response.length>0){
             document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+response;
-            //document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
-            var newIndexArray = [].concat(this.props.indexArray);
-            newIndexArray[folderName] = fileIndex;
-            this._onChangeIndex(newIndexArray);
+            this._requestTimestamp(folderName,fileIndex);
           }
         }
       }
     });
-    Meteor.call("getTimestamp",folderName,fileIndex,(err,response) => {
-      if(err)
-        console.log(err);
-      else{
-        if(response == "NO IMAGE"){}else{
-          response = JSON.parse(response);
-          document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
-          // this.setState({
-          //   currentIndex:fileIndex
-          // });
-          // this._onChangeIndex(fileIndex);
-        }
-      }
-    })
   }
   _getPrev(event){
     var folderName = String(event.target.parentNode.parentNode.parentNode.getAttribute("id")).replace("slider","");
     var fileIndex = this.props.indexArray[folderName] - 1;
-    if(fileIndex<0 || fileIndex>Meteor.settings.public.imgLength){
+    if(fileIndex<0 || fileIndex>this.props.imgLength){
 
     }else{
       this._handleHTTPcalls(folderName,fileIndex);
@@ -68,8 +69,8 @@ class GridDisplay extends Component{
   _getNext(event){
     var folderName = String(event.target.parentNode.parentNode.parentNode.getAttribute("id")).replace("slider","");
     var fileIndex = this.props.indexArray[folderName] + 1;
-    if(fileIndex<0 || fileIndex>Meteor.settings.public.imgLength){
-
+    if(fileIndex<0 || fileIndex>this.props.imgLength){
+      console.log("fileIndex is requesting"+fileIndex);
     }else{
       this._handleHTTPcalls(folderName,fileIndex);
     }
@@ -107,7 +108,8 @@ GridDisplay.propTypes={
   indexArray:PropTypes.array,
   changeStateIndex:PropTypes.func,
   disableBeforeArray: PropTypes.array,
-  disableNextArray: PropTypes.array
+  disableNextArray: PropTypes.array,
+  imgLength: PropTypes.number
 }
 
 export default GridDisplay;
