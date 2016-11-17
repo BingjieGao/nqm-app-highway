@@ -16,14 +16,14 @@ class MainDisplay extends Component{
     super(props);
     this.state={
       currentTime:this.props.timeData[0]["timestamp"],
-      currentIndex:this.props.timeData[0]["DictIndex"],
+      indexArray: new Array(128).fill(this.props.timeData[0]["DictIndex"]),
       currentSrc:"",
       currentLatLng:{},
       updateState:true,
       mapDisplay:true,
       gridDisplay:false,
-      disableBefore:false,
-      disableNext: false
+      disableBeforeArray:null,
+      disableNextArray: null
     }
     this._switchView = this._switchView.bind(this);
     this._changeStateIndex = this._changeStateIndex.bind(this);
@@ -45,30 +45,20 @@ class MainDisplay extends Component{
     }
   }
   _checkStateIndex(){
-    console.log('check Index now is '+this.state.currentIndex);
-    console.log("current dict length is "+ this.props.timeData[0]["DictIndex"]);
-    if(this.state.currentIndex >0 ){
-      this.setState({
-        disableBefore: false
-      })
-    }else{
-      this.setState({
-        disableBefore: true
-      })
-    }
-    if(this.state.currentIndex < this.props.timeData[0]["DictIndex"] ){
-      this.setState({
-        disableNext: false
-      })
-    }else{
-      this.setState({
-        disableNext: true
-      })
-    }
-  }
-  _changeStateIndex(currentIndex){
+    var newBeforeArray = _.map(this.state.indexArray,(val) => {
+      return val>0?false:true;
+    });
+    var newNextArray = _.map(this.state.indexArray,(val) =>{
+      return val>=this.props.timeData[0]['DictIndex']?true:false;
+    });
     this.setState({
-      currentIndex:currentIndex
+      disableBeforeArray: newBeforeArray,
+      disableNextArray: newNextArray
+    })
+  }
+  _changeStateIndex(indexArray){
+    this.setState({
+      indexArray: indexArray
     });
     this._checkStateIndex();
   }
@@ -84,11 +74,14 @@ class MainDisplay extends Component{
     if(this.state.gridDisplay == false && this.state.mapDisplay == true){
       this.setState({
         currentTime: this.props.timeData[0]["timestamp"],
-        currentIndex: this.props.timeData[0]["DictIndex"]
+        indexArray: this.state.indexArray.fill(this.props.timeData[0]["DictIndex"])
       });
     }else{
+      var newIndexArray = _.map(this.state.indexArray,(val) => {
+        return (val-1)>0?(val-1):0
+      })
       this.setState({
-        currentIndex:(this.state.currentIndex - 1)>0?this.state.currentIndex - 1:0
+        indexArray: newIndexArray
       })
     }
     this._checkStateIndex();
@@ -125,10 +118,10 @@ class MainDisplay extends Component{
       gridDisplay = (<GridDisplay 
                         cameraData={this.props.cameraData} 
                         currentTime={this.state.currentTime} 
-                        currentIndex={this.state.currentIndex}
+                        indexArray={this.state.indexArray}
                         changeStateIndex={this._changeStateIndex}
-                        disableBefore={this.state.disableBefore}
-                        disableNext = {this.state.disableNext}
+                        disableBeforeArray={this.state.disableBeforeArray}
+                        disableNextArray = {this.state.disableNextArray}
                     />);
     }
     return(

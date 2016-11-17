@@ -13,16 +13,14 @@ class GridDisplay extends Component{
     super(props);
     this.state={
       currentBase64String:"",
-      currentIndex:this.props.currentIndex,
-      disableBefore: false,
-      disableNext: true
+      indexArray:this.props.indexArray
     }
     this._getPrev = this._getPrev.bind(this);
     this._getNext = this._getNext.bind(this);
 
   }
-  _onChangeIndex(currentIndex){
-    this.props.changeStateIndex(currentIndex);
+  _onChangeIndex(indexArray){
+    this.props.changeStateIndex(indexArray);
   }
   _handleHTTPcalls(folderName,fileIndex){
     Meteor.call("getBase64String",folderName,fileIndex,(err,response) => {
@@ -33,10 +31,9 @@ class GridDisplay extends Component{
           if(response.length>0){
             document.getElementById("main-img"+folderName).src = "data:image/png;base64,"+response;
             //document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
-            this.setState({
-            currentIndex:fileIndex
-          });
-          this._onChangeIndex(fileIndex);
+            var newIndexArray = [].concat(this.props.indexArray);
+            newIndexArray[folderName] = fileIndex;
+            this._onChangeIndex(newIndexArray);
           }
         }
       }
@@ -48,17 +45,17 @@ class GridDisplay extends Component{
         if(response == "NO IMAGE"){}else{
           response = JSON.parse(response);
           document.getElementById("img-timestamp"+folderName).innerHTML = new Date(response.timestamp).toUTCString();
-          this.setState({
-            currentIndex:fileIndex
-          });
-          this._onChangeIndex(fileIndex);
+          // this.setState({
+          //   currentIndex:fileIndex
+          // });
+          // this._onChangeIndex(fileIndex);
         }
       }
     })
   }
   _getPrev(event){
     var folderName = String(event.target.parentNode.parentNode.parentNode.getAttribute("id")).replace("slider","");
-    var fileIndex = this.props.currentIndex - 1;
+    var fileIndex = this.props.indexArray[folderName] - 1;
     if(fileIndex<0 || fileIndex>Meteor.settings.public.imgLength){
 
     }else{
@@ -70,7 +67,7 @@ class GridDisplay extends Component{
   }
   _getNext(event){
     var folderName = String(event.target.parentNode.parentNode.parentNode.getAttribute("id")).replace("slider","");
-    var fileIndex = this.props.currentIndex + 1;
+    var fileIndex = this.props.indexArray[folderName] + 1;
     if(fileIndex<0 || fileIndex>Meteor.settings.public.imgLength){
 
     }else{
@@ -90,8 +87,8 @@ class GridDisplay extends Component{
           <img width="100%" src={val.src.trim()+"?timestamp="+this.props.currentTime.getTime()} id={"main-img"+val.ID}></img>
           <div className="slider-timestamp" id={"img-timestamp"+val.ID}>{this.props.currentTime.toUTCString()}</div>
           <div id={"slider"+val.ID} className="prev-next">
-            <IconButton iconClassName="material-icons" onTouchTap={this._getPrev} disabled={this.props.disableBefore}>navigate_before</IconButton>
-            <IconButton iconClassName="material-icons" onTouchTap={this._getNext} disabled={this.props.disableNext} style={styleNevigate.right}>navigate_next</IconButton>
+            <IconButton iconClassName="material-icons" onTouchTap={this._getPrev} disabled={this.props.disableBeforeArray[val.ID]}>navigate_before</IconButton>
+            <IconButton iconClassName="material-icons" onTouchTap={this._getNext} disabled={this.props.disableNextArray[val.ID]} style={styleNevigate.right}>navigate_next</IconButton>
           </div>
         </div>
       )
@@ -107,10 +104,10 @@ class GridDisplay extends Component{
 }
 GridDisplay.propTypes={
   cameraData:PropTypes.array,
-  currentIndex:PropTypes.number,
+  indexArray:PropTypes.array,
   changeStateIndex:PropTypes.func,
-  disableBefore: PropTypes.bool,
-  disableNext: PropTypes.bool
+  disableBeforeArray: PropTypes.array,
+  disableNextArray: PropTypes.array
 }
 
 export default GridDisplay;

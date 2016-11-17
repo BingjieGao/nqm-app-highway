@@ -7,7 +7,7 @@ Meteor.startup(() => {
   // code to run on server at startup
   Meteor.methods({
     "getBase64String":function(folderName,fileIndex){
-      var getURL = "https://nqm-app-highway.nq-m.com/img/"+folderName+"/"+fileIndex;
+      var getURL = "http://localhost:3100/img/"+folderName+"/"+fileIndex;
       console.log(getURL);
       var options = {
                       headers: 
@@ -33,7 +33,7 @@ Meteor.startup(() => {
         })
     },
     "getTimestamp":function(folderName,fileIndex){
-      var getURL = "https://nqm-app-highway.nq-m.com/id/"+folderName+"/"+fileIndex;
+      var getURL = "http://localhost:3100/id/"+folderName+"/"+fileIndex;
       var options = {
                       headers: 
                         {
