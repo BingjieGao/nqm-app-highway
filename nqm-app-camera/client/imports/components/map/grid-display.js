@@ -85,8 +85,8 @@ class GridDisplay extends Component{
     let imgs = _.map(this.props.cameraData,(val,i) => {
       return(
         <div className="flex-items" key={val.ID} id={"flex-img"+val.ID}>
-          <img width="100%" src={val.src.trim()+"?timestamp="+this.props.currentTime.getTime()} id={"main-img"+val.ID}></img>
-          <div className="slider-timestamp" id={"img-timestamp"+val.ID}>{this.props.currentTime.toUTCString()}</div>
+          <img width="100%" src={val.src.trim()+"?timestamp="+this.props.currentTime} id={"main-img"+val.ID}></img>
+          <div className="slider-timestamp" id={"img-timestamp"+val.ID}>{new Date(this.props.currentTime).toUTCString()}</div>
           <div id={"slider"+val.ID} className="prev-next">
             <IconButton iconClassName="material-icons" onTouchTap={this._getPrev} disabled={this.props.disableBeforeArray[val.ID]}>navigate_before</IconButton>
             <IconButton iconClassName="material-icons" onTouchTap={this._getNext} disabled={this.props.disableNextArray[val.ID]} style={styleNevigate.right}>navigate_next</IconButton>

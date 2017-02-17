@@ -16,13 +16,14 @@ class MarkerCluster extends MapLayer{
     this.props.onClick();
   }
   mountMarkers(timeData){
+    console.log(timeData[0]["timestamp"]);
     let markers = [];
     this.leafletElement = L.markerClusterGroup();
     var cssIcon = L.divIcon({
         className: 'css-icon'
     });
     markers = _.map(this.props.data,(val,i) => {
-      var srcStr = val.src.trim()+"?timestamp="+timeData[i]["timestamp"].getTime();
+      var srcStr = val.src.trim()+"?timestamp="+timeData[i]["timestamp"];
       var popup ='<span><img width="240" height="200" src='+srcStr+'></img></span>';
       this._markers[Number(val.ID)] = L.marker(new L.LatLng(val.latitude,val.longitude),{
         title:val.src,
@@ -39,7 +40,7 @@ class MarkerCluster extends MapLayer{
   }
   componentWillReceiveProps(nextProps){
     _.forEach(nextProps.data,(val,i) => {
-      var srcStr = val.src.trim()+"?timestamp="+nextProps.timeData[i]["timestamp"].getTime();
+      var srcStr = val.src.trim()+"?timestamp="+nextProps.timeData[i]["timestamp"];
       var popup ='<span><img width="240" height="200" src='+srcStr+'></img></span>';
       this._markers[Number(val.ID)].bindPopup(popup).on('click',(e) => {this._handleClick});
     });
