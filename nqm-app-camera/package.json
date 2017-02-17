@@ -1,5 +1,5 @@
 {
-  "name": "nqm-app-camera",
+  "name": "nqm-app-highway",
   "private": true,
   "scripts": {
     "start": "meteor run"
